@@ -10,12 +10,31 @@ report are folded into this file's Locked decisions and the finished
 
 ---
 
-## Where this stands
+## Where this stands (updated 2026-08-08, hand-in day)
 
 The build, every artifact in `results/`, and the full six-section report prose
-in `report.docx` are done and verified. **Only Phase 10 — deploy and hand in —
-remains**; the operational notes for it are below, and the locked decisions and
-every quotable number are in the sections that follow.
+in `report.docx` are done and verified. **Phase 10 is nearly complete**: the
+project is its own public repo and the app is live (URLs below); both URLs are
+pasted into `report.docx` (Section 5 + Figure 9 caption) and `README.md`. A
+whole-document audit on 2026-08-08 verified every one of the 14 report tables
+cell-by-cell against `results/`, every quantitative prose claim against the
+CSVs (including NVDA 30-held/22-capped/0-for-CVaR, holdings ranges 13-16 /
+13-21 / 12-18 / 53-60 at the 0.5% threshold, 5 names at cap on 2023-12-05, the
+four dropped lexicon terms, and the 19 OMML equations), and fixed two
+mechanical typos ("falls"→"fall", "separate"→"separates").
+
+**REMAINING before Moodle (in order):**
+1. **BLOCKER — Figure 9 is the wrong screenshot.** The embedded image is the
+   *Compare funds* tab; the caption promises the **Fact sheet** tab with the
+   Key facts block (fee line visible) and the co-crash panel. Recapture from
+   the live URL's Fact sheet tab and replace the image (image only — the
+   caption below it is already correct).
+2. In Word: F9 to populate all SEQ caption numbers (they currently render as
+   "Figure ." / "Table ."), update the TOC, then export `report/report.pdf`.
+3. Delete the stray `Screenshot*.png` files and `__pycache__`/`.ruff_cache`
+   from the folder, re-run `scripts/check_handin.py` (expect no `[FAIL]`),
+   commit + push the final `report.docx`/`report.pdf`, zip `z5594806_projectB`,
+   submit on Moodle with the two links.
 
 ### Running the app
 
@@ -33,26 +52,25 @@ one.
 - **Local:** run the command above and use the URL it prints. A port is not a
   deployment: nothing listens after the process exits, and the address means
   nothing on another computer.
-- **Live URL (Phase 10, not yet created):** `[paste the share.streamlit.io URL
-  here]` — this is the link that goes in the report, alongside the public GitHub
-  repo link, and it matches the two `[paste ... here]` placeholders already
-  waiting in `README.md`. A localhost address must never be submitted as the
-  deployed app.
+- **Live URL (DEPLOYED 2026-08-08):**
+  https://projectb-quokka-funds-ihndbhpfsgr2aqfwey6ees.streamlit.app
+- **Public repo:** https://github.com/lucassun-unsw/projectb-quokka-funds
+  (branch `main`, `streamlit_app.py` at root). Both links are already pasted
+  into `report.docx` and `README.md`.
 
-**Phase 10 gotcha, verified.** This folder currently sits inside the
-**course** repo (`git remote -v` → `Alexander-M-Dickerson/fins-agent`) and is
-**untracked** there — nothing has been committed anywhere yet. Brief Appendix D:
-`z5594806_projectB` must become **its own NEW repository, independent of
-fins-agent**, with `streamlit_app.py` at its root. So Phase 10 starts by
-`git init`-ing this folder as a fresh repo and pushing it to a new remote —
-never by committing into the course repo, whose origin is the lecturer's.
-
-**Then Phase 10 — deploy and hand in** (student's logins required):
-`python scripts/run_part_b.py` → `streamlit run streamlit_app.py` (local
-check) → `python scripts/check_handin.py` (no `[FAIL]`) → push to a PUBLIC
-GitHub repo → deploy on share.streamlit.io (entrypoint `streamlit_app.py`) →
-paste the live URL + repo link into the report → clear `__pycache__` → zip
-`z5594806_projectB` → Moodle. (The private planning docs are already removed.)
+**Deployment record (was "Phase 10 gotcha").** Done as planned: this folder
+was `git init`-ed as its **own independent repo** (never committed into the
+course repo) and pushed public; Streamlit Cloud deployed from it. Two things
+learned during deploy:
+- Streamlit Cloud auto-added a `.devcontainer/devcontainer.json` commit
+  (Codespaces support) — harmless, kept.
+- **`requirements.txt` now pins `streamlit==1.57.0`.** The unpinned cloud
+  build resolved a different Streamlit whose tab DOM does not match
+  `app_theme.py`'s pill-tab CSS (`button[data-baseweb="tab"]`), so the live
+  app rendered plain underline tabs. Pinning the locally-audited version fixed
+  it. Do not unpin; if Streamlit is ever upgraded, re-audit the app visually.
+- `Screenshot*.png` is now gitignored — screenshots dropped into this folder
+  must never reach the submission repo or the zip.
 
 **Open loose ends** (all small):
 - Citations: **closed**. The four convention citations were dropped rather
@@ -296,9 +314,14 @@ appendix, retired the duplicate per-fund fact-sheet table (body Table 1 now carr
 all six required elements for all twelve funds), condensed `current_holdings.csv`
 from 236 printed rows to 12, and stopped printing three one-to-eight-row tables
 (`vol_clustering_acf`, `sentiment_neutrality`, `lexicon_before_after`) that are
-quoted in prose instead. **All exhibit numbers changed** — the co-crash panel is
-**Figure 6**, cost sensitivity is **Figure A2**. The full allocation and the
-before/after mapping are reflected in the finished `report.docx`.
+quoted in prose instead. **Final numbering (corrected 2026-08-08 — the earlier
+"co-crash = Figure 6 / cost sensitivity = Figure A2" note was stale):** the
+finished document uses one continuous SEQ sequence, Figures 1–9 and Tables
+1–14, appendix exhibits included. Body = 6 figures (1 Sharpe bar, 2 growth,
+3 drawdown, 4 sentiment index, **5 co-crash**, 6 fusion) + Tables 1–4;
+appendix = Figures 7 (stacked weights), 8 (NVDA), 9 (live-app screenshot) +
+Tables 5–14. There is no "Figure A2" anywhere. All typed in-text references
+were machine-checked against a simulated F9 renumbering — every one matches.
 
 Derived from marks-per-word: Section 4 carries the 30% band (max words);
 Section 5's 15% is earned by the deployed app itself (min words); Section 6 is
@@ -400,11 +423,13 @@ now, and the re-audit re-proved the same property, with only the
 artifacts it deliberately changed moving).
 
 Supporting files, none of which feed a number: `ruff.toml` (lint settings +
-the two documented frozen-file exemptions) and the test suite — **26 tests**:
-`tests/test_app.py` (11, display-layer), `tests/test_portfolios.py` (13, the risk
+the two documented frozen-file exemptions) and the test suite — **29 tests**
+(count updated 2026-08-08): `tests/test_app.py` (14, display-layer, including
+the management-fee tests), `tests/test_portfolios.py` (13, the risk
 estimate, the no-look-ahead scramble, and the calendar / lag / cap rules added
 after mutation testing showed three of them had no test that could
-fail), `tests/test_smoke.py` (2).
+fail), `tests/test_smoke.py` (2). All 29 pass as of the 2026-08-08 audit;
+`ruff check .` clean with no flags.
 
 ---
 
@@ -463,8 +488,15 @@ report's economic reasoning; only this project's own `z5594806_projectA`/
       continuous Figure 1–9 / Table 1–14 scheme. The pre-export steps (delete the
       one remaining marker, F9-update fields, export `report.pdf`) fold into
       Phase 10.
-- [ ] Phase 10 — deploy (public repo + Streamlit Cloud, student's logins),
-      paste the live URL + repo link into the report, capture Figure 9 (live app
-      screenshot), then clear `__pycache__` (all private planning docs and
-      agent-file references are already removed), re-run `check_handin.py`, zip
-      `z5594806_projectB`, submit on Moodle
+- [x] Phase 10a — deployed 2026-08-08: own public repo
+      (`lucassun-unsw/projectb-quokka-funds`) + Streamlit Cloud live URL;
+      `streamlit==1.57.0` pinned after the cloud build's tab styling diverged;
+      URLs pasted into `report.docx` + `README.md`; whole-document audit run
+      (all 14 tables and all prose numbers verified against `results/`; two
+      typos fixed)
+- [ ] Phase 10b — hand in: **replace the Figure 9 image (currently the wrong
+      tab — must be the Fact sheet tab with fee line + co-crash panel, captured
+      from the live URL)**, F9-update fields + TOC in Word, export
+      `report/report.pdf`, delete `Screenshot*.png` + `__pycache__` +
+      `.ruff_cache`, re-run `check_handin.py`, commit + push final report, zip
+      `z5594806_projectB`, submit on Moodle with both links
