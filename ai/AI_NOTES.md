@@ -634,5 +634,22 @@ reviewed their output. The judgments and decisions recorded as mine are mine.
   miscount and the missing deployment sentence from the same app pass are in the
   audit note above. (see prompt_log_13)
 
+- **A live deploy failed in a way no local test could see.** The Streamlit
+  Cloud build resolved a different `streamlit` version than my pinned local
+  `.venv`, and the deployed tab strip rendered plain underline tabs instead of
+  the pills `app_theme.py` styles — the CSS selector targets Streamlit's
+  internal DOM, which changes between releases. Pinned `requirements.txt` to
+  the exact version the app was visually audited against. Also lost half a
+  `gh repo create` command to a terminal line-wrap and did not notice the
+  repo was empty until checking GitHub directly. (see prompt_log_14)
+- **I fixed Figure 9 and the fix did not take.** I inserted a screenshot for
+  the deployed-app figure and exported `report.pdf`, believing it done. A hash
+  check of the embedded image against the one flagged earlier in the same
+  session showed it was byte-identical — I had not actually replaced it, and
+  both the docx and the exported PDF still showed the wrong tab (*Compare
+  funds*, not the *Fact sheet* tab the caption promises). Caught only because
+  the check compared the image's actual content against the caption's
+  specific claim, not by re-reading the document. (see prompt_log_14)
+
 ## Individual prompt logs
 See the `prompt_log_*.md` files in this folder, one per task.

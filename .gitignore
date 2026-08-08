@@ -19,3 +19,4 @@ data/
 
 # Local screenshots never belong in the submission repo
 Screenshot*.png
+.DS_Store
