@@ -1,0 +1,13 @@
+# Build / reproduction-only dependencies (NOT needed by the deployed app).
+# Install alongside requirements.txt to run scripts/run_part_b.py end to end:
+#     pip install -r requirements.txt -r requirements-dev.txt
+# Keep these OUT of the deployed app so Streamlit cold starts stay fast - the app
+# should load precomputed artifacts from results/, not score sentiment at runtime.
+nltk>=3.8
+
+# Sentiment model (src/sentiment.py, Phase 3 - locked decision, see
+# report/OUTLINE.md): finVADER = VADER + finance word lists (SentiBigNomics,
+# Henry's). vaderSentiment is the general-purpose analyser; finvader supplies
+# the finance lexicon extensions build_finvader() merges in on top of it.
+vaderSentiment>=3.3.2
+finvader>=1.0

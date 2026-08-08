@@ -1,0 +1,65 @@
+[server]
+headless = true
+
+[browser]
+gatherUsageStats = false
+
+# Dark product theme. The app is a retail trading surface, not a printed report -
+# the report exhibits keep the cream FT style in src/ft_style.py. Colours here
+# mirror src/app_theme.py, which styles the matplotlib charts drawn in the app,
+# so the chrome and the charts read as one surface rather than two.
+#
+# Pinned explicitly rather than left to the viewer's preference: a marker opening
+# this in light mode must not get white chrome wrapped around dark charts.
+[theme]
+base = "dark"
+
+# The dark-tile ladder: a true-black floor with warm-neutral tiles lifted onto
+# it. The floor is pure void so every panel printed on it reads as raised without
+# needing an outline or a shadow.
+backgroundColor = "#000000"
+secondaryBackgroundColor = "#1D1D1F"
+textColor = "#F5F5F7"
+# One interactive colour, and links share it. Links used to be teal, which is a
+# fund series colour - so the app was spending a data hue on chrome.
+primaryColor = "#2997FF"
+linkColor = "#2997FF"
+
+# Panels are separated by shade steps rather than outlines, but the hairlines that
+# do exist are set light enough to actually see - invisible edges made the tables
+# and inputs read as flat blocks of nothing.
+borderColor = "#313133"
+dataframeBorderColor = "#313133"
+dataframeHeaderBackgroundColor = "#2A2A2C"
+codeBackgroundColor = "#1D1D1F"
+
+showWidgetBorder = false
+showSidebarBorder = false
+baseRadius = "0.6rem"
+buttonRadius = "0.5rem"
+
+# Small type, and hierarchy from weight and colour contrast rather than from size
+# jumps. Weights follow the 300/400/600/700 ladder - 500 is absent on purpose,
+# so nothing here may be set to it.
+baseFontSize = 13
+metricValueFontSize = "1.35rem"
+metricValueFontWeight = 600
+headingFontSizes = ["1.35rem", "1.1rem", "0.95rem"]
+headingFontWeights = [600, 600, 600]
+
+# Direction semantics: green gains, red losses (Western convention, confirmed).
+# Both lightened - saturated mid-tone green and red go muddy on a dark surface.
+greenColor = "#3DDC97"
+redColor = "#FF6B80"
+blueColor = "#2997FF"
+orangeColor = "#FFB84D"
+grayColor = "#C7C7CC"
+
+# Native st charts (the weights-over-time area chart) use the same series order as
+# the matplotlib figures, so one colour means one thing across the whole app.
+chartCategoricalColors = ["#BF5AF2", "#4EE0CD", "#6BA3FF", "#FFB84D", "#3DDC97", "#FF6B80"]
+
+[theme.sidebar]
+backgroundColor = "#1D1D1F"
+secondaryBackgroundColor = "#2A2A2C"
+borderColor = "#313133"

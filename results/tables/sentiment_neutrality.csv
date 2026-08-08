@@ -1,0 +1,2 @@
+n_distinct_headlines,plain_vader_lexicon_terms,finvader_lexicon_terms,n_neutral_plain,pct_neutral_plain,n_neutral_finvader,pct_neutral_finvader,n_rescued_from_neutral,pct_of_plain_neutrals_rescued,mean_compound_plain,mean_compound_finvader
+105330,7502,13324,50654,48.09076236589765,16851,15.998291085160924,34662,68.42894934259881,0.10535257856261275,0.06887622614639705

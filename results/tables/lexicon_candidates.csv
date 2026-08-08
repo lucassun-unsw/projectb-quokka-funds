@@ -1,0 +1,33 @@
+term,r1,r2,r3,r4,r5,mean,sd,rationale,passes_filters,human_decision
+downgrades,-2,-3,-2,-2,-2,-2.2,0.4472135954999578,plural of covered 'downgrade',True,keep
+downgraded,-2,-3,-2,-3,-2,-2.4,0.5477225575051661,participle of covered 'downgrade',True,keep
+upgraded,2,3,2,2,2,2.2,0.4472135954999578,participle of covered 'upgrade',True,keep
+headwinds,-2,-2,-1,-2,-2,-1.8,0.4472135954999579,plural of covered 'headwind',True,keep
+tailwind,2,1,2,2,1,1.6,0.5477225575051661,covered 'tailwinds' missing singular? reverse gap,True,keep
+tailwinds,2,2,1,2,2,1.8,0.4472135954999579,positive outlook idiom,True,keep
+layoffs,-3,-2,-3,-2,-3,-2.6,0.5477225575051661,plural of covered 'layoff',True,keep
+defaults,-3,-2,-3,-3,-2,-2.6,0.5477225575051661,plural of covered 'default',True,keep
+buybacks,2,1,2,2,1,1.6,0.5477225575051661,plural of covered 'buyback',True,keep
+recalls,-2,-2,-2,-1,-2,-1.8,0.4472135954999579,plural of covered 'recall',True,keep
+probes,-2,-1,-2,-2,-2,-1.8,0.447213595499958,plural of covered 'probe',True,keep
+halted,-2,-1,-2,-2,-1,-1.6,0.5477225575051661,participle of covered 'halt',True,keep
+impaired,-2,-2,-2,-1,-2,-1.8,0.4472135954999579,participle; writedown context,True,keep
+outperformed,2,3,2,2,2,2.2,0.4472135954999578,past of covered 'outperform',True,keep
+underperformed,-2,-3,-2,-2,-2,-2.2,0.4472135954999578,past of covered 'underperform',True,keep
+restructuring,-1,-2,-1,-1,-1,-1.2,0.447213595499958,"distress signal, mildly negative",True,keep
+delisting,-3,-3,-2,-3,-3,-2.8,0.4472135954999579,exchange removal,True,keep
+delisted,-3,-3,-3,-2,-3,-2.8,0.4472135954999579,"exchange removal, done",True,keep
+oversold,1,2,1,0,1,1.0,0.7071067811865476,technical: bounce expected,True,keep
+overvalued,-2,-2,-1,-2,-2,-1.8,0.4472135954999579,valuation warning,True,keep
+dilutive,-2,-1,-2,-2,-1,-1.6,0.5477225575051661,shareholder dilution,True,keep
+breakout,2,2,3,2,2,2.2,0.4472135954999579,technical: bullish move,True,keep
+moat,2,1,2,1,2,1.6,0.5477225575051661,durable competitive advantage,True,keep
+write-down,-2,-3,-2,-2,-2,-2.2,0.4472135954999578,asset value cut,True,keep
+going-concern,-3,-3,-4,-3,-3,-3.2,0.4472135954999579,auditor doubt on survival,True,keep
+rate-cut,1,2,1,1,2,1.4,0.5477225575051661,"easing, risk-asset positive",True,keep
+rate-hike,-1,-2,-1,-1,-2,-1.4,0.5477225575051661,tightening,True,keep
+profit-taking,-1,-1,0,-1,-1,-0.8,0.4472135954999579,selling into strength,True,keep
+short-squeeze,3,-2,2,-3,1,0.2,2.5884358211089573,direction depends on your book,False,drop
+stress-test,0,-1,0,-1,0,-0.4,0.5477225575051662,"regulatory routine, mildly negative",False,drop
+margin,0,1,0,-1,0,0.0,0.7071067811865476,not sentiment-bearing alone,False,drop
+margins,1,0,0,-1,0,0.0,0.7071067811865476,not sentiment-bearing alone,False,drop

@@ -1,0 +1,35 @@
+# Lint settings for this project on its own.
+#
+# This folder is submitted (and deployed) as a standalone repository, so it
+# cannot rely on the course repo's root pyproject.toml. Without a config here,
+# anyone who clones just this project gets Ruff's defaults - an 88-character
+# line limit and only the E/F rule sets - and sees a different result from the
+# one reported in the report. These values mirror the course repo so the check
+# is reproducible either way.
+line-length = 100
+target-version = "py313"
+
+[lint]
+select = ["E", "F", "I", "W", "UP", "SIM", "RUF"]
+
+# RUF001 flags en dashes, minus signs, and other typographically correct
+# characters as "ambiguous". The app and the figure titles are prose meant for a
+# reader, not identifiers, so the dashes stay.
+ignore = ["RUF001"]
+
+# Two files are deliberately exempt rather than fixed. Both exemptions are
+# narrow - the specific rule on the specific file - so anything else that
+# appears in them still fails the check.
+[lint.per-file-ignores]
+# Provided by the course and used verbatim; CLAUDE.md requires it stay identical
+# to the copy in Part A, so its import order and __all__ ordering are not mine to
+# reformat. Reordering __all__ would also be a public-API change to a file I do
+# not own.
+"src/data_access.py" = ["I001", "RUF022"]
+
+# Frozen Part A port, verified to reproduce Part A's exact numbers (equity
+# 50,300 x 9, crypto 14,610 post-cap, combined panel 60,360 rows). One function
+# signature runs to 103 characters. Rewrapping it is safe in principle, but the
+# rule for this file is that it is not edited without a reason that the numbers
+# demand - and a line length is not one.
+"src/etl.py" = ["E501"]

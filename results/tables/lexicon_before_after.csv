@@ -1,0 +1,2 @@
+n_terms_installed,n_distinct_headlines,n_headlines_containing_term,pct_headlines_containing_term,n_scores_changed,pct_scores_changed,n_false_neutrals_fixed,pct_false_neutrals_fixed,mean_abs_change_when_changed,mode,index_corr_with_base
+28,105330,1106,1.0500332288996488,1097,1.0414886547042628,253,0.2401974746036267,0.38047894257064724,human-reviewed,0.9899149681494991

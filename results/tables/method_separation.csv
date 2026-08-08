@@ -1,0 +1,19 @@
+family,method_a,method_b,max_abs_weight_diff,family_cap,at_family_cap
+Combined,Max-Sharpe,Min-Variance,0.1,0.1,True
+Combined,Max-Sharpe,Risk Parity,0.09247703246640111,0.1,False
+Combined,Max-Sharpe,Min-CVaR,0.1,0.1,True
+Combined,Min-Variance,Risk Parity,0.07775418390882795,0.1,False
+Combined,Min-Variance,Min-CVaR,0.1,0.1,True
+Combined,Risk Parity,Min-CVaR,0.0840442539582491,0.1,False
+Equity-Only,Max-Sharpe,Min-Variance,0.1,0.1,True
+Equity-Only,Max-Sharpe,Risk Parity,0.09088607222595182,0.1,False
+Equity-Only,Max-Sharpe,Min-CVaR,0.1,0.1,True
+Equity-Only,Min-Variance,Risk Parity,0.0763582374929657,0.1,False
+Equity-Only,Min-Variance,Min-CVaR,0.1,0.1,True
+Equity-Only,Risk Parity,Min-CVaR,0.0825192159762212,0.1,False
+Crypto-Only,Max-Sharpe,Min-Variance,0.25,0.25,True
+Crypto-Only,Max-Sharpe,Risk Parity,0.1699805862246228,0.25,False
+Crypto-Only,Max-Sharpe,Min-CVaR,0.25,0.25,True
+Crypto-Only,Min-Variance,Risk Parity,0.15006686441257766,0.25,False
+Crypto-Only,Min-Variance,Min-CVaR,0.25,0.25,True
+Crypto-Only,Risk Parity,Min-CVaR,0.18584721035900859,0.25,False
