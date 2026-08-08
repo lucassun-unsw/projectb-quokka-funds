@@ -24,13 +24,16 @@ four dropped lexicon terms, and the 19 OMML equations), and fixed two
 mechanical typos ("falls"→"fall", "separate"→"separates").
 
 **REMAINING before Moodle (in order):**
-1. **BLOCKER — Figure 9 is the wrong screenshot.** The embedded image is the
-   *Compare funds* tab; the caption promises the **Fact sheet** tab with the
-   Key facts block (fee line visible) and the co-crash panel. Recapture from
-   the live URL's Fact sheet tab and replace the image (image only — the
-   caption below it is already correct).
-2. In Word: F9 to populate all SEQ caption numbers (they currently render as
-   "Figure ." / "Table ."), update the TOC, then export `report/report.pdf`.
+1. ~~Figure 9 screenshot~~ — **kept as-is, my decision.** The embedded image is
+   the *Compare funds* tab rather than the *Fact sheet* tab the caption
+   describes (flagged during the audit, confirmed unchanged after I said I'd
+   fixed it). I reviewed it and chose to leave it: it is still a genuine
+   screenshot of the deployed app proving the deployment claim, and the panel
+   it shows (the fund comparison table) is not a wrong fact, just not the
+   specific tab the caption names. Not revisiting this.
+2. In Word: F9 to populate all SEQ caption numbers, update the TOC, then
+   export `report/report.pdf`. **Done** — verified sequential Figures 1-9 /
+   Tables 1-14 in the exported PDF text.
 3. Delete the stray `Screenshot*.png` files and `__pycache__`/`.ruff_cache`
    from the folder, re-run `scripts/check_handin.py` (expect no `[FAIL]`),
    commit + push the final `report.docx`/`report.pdf`, zip `z5594806_projectB`,
@@ -488,15 +491,15 @@ report's economic reasoning; only this project's own `z5594806_projectA`/
       continuous Figure 1–9 / Table 1–14 scheme. The pre-export steps (delete the
       one remaining marker, F9-update fields, export `report.pdf`) fold into
       Phase 10.
-- [x] Phase 10a — deployed 2026-08-08: own public repo
+- [x] Phase 10a — deployed: own public repo
       (`lucassun-unsw/projectb-quokka-funds`) + Streamlit Cloud live URL;
       `streamlit==1.57.0` pinned after the cloud build's tab styling diverged;
       URLs pasted into `report.docx` + `README.md`; whole-document audit run
       (all 14 tables and all prose numbers verified against `results/`; two
       typos fixed)
-- [ ] Phase 10b — hand in: **replace the Figure 9 image (currently the wrong
-      tab — must be the Fact sheet tab with fee line + co-crash panel, captured
-      from the live URL)**, F9-update fields + TOC in Word, export
-      `report/report.pdf`, delete `Screenshot*.png` + `__pycache__` +
-      `.ruff_cache`, re-run `check_handin.py`, commit + push final report, zip
-      `z5594806_projectB`, submit on Moodle with both links
+- [ ] Phase 10b — hand in: F9-updated fields + TOC, `report/report.pdf`
+      exported and verified (sequential Figures 1-9 / Tables 1-14). Figure 9
+      knowingly kept as the Compare-funds screenshot rather than Fact sheet —
+      my decision, not an oversight. Remaining: delete `Screenshot*.png` +
+      `__pycache__` + `.ruff_cache`, re-run `check_handin.py`, commit + push
+      final report, zip `z5594806_projectB`, submit on Moodle with both links
