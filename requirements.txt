@@ -1,4 +1,7 @@
-streamlit>=1.50,<2
+# Pinned exactly: app_theme.py styles Streamlit's internal tab/pill DOM
+# (button[data-baseweb="tab"]), which changes between releases - a different
+# version on Streamlit Cloud rendered plain underline tabs instead of pills.
+streamlit==1.57.0
 pandas>=2.0
 numpy>=1.24
 scipy>=1.11
