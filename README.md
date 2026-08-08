@@ -3,8 +3,8 @@
 FINS3645 Financial Market Data Design & Analysis · Project Part B (Stations 3–4)
 Lucas Sun · z5594806 · UNSW
 
-**Live app:** _[paste the Streamlit URL here at hand-in]_
-**Repository:** _[paste the public GitHub URL here at hand-in]_
+**Live app:** https://projectb-quokka-funds-ihndbhpfsgr2aqfwey6ees.streamlit.app
+**Repository:** https://github.com/lucassun-unsw/projectb-quokka-funds
 
 > University coursework, **not investment advice**. Every fund here is a
 > walk-forward backtest over a fixed 2020–2023 teaching dataset. None is a
