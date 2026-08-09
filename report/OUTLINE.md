@@ -3,41 +3,32 @@
 Planning aid only (the report source is `report.docx`, submitted as
 `report.pdf`). Part B = Funds, Sentiment & App (Stations 3-4), 50% of the
 course, due Friday Week 11. Companion docs: the graded AI trail in
-`ai/AI_NOTES.md` + `ai/prompt_log_01..13` (session history lives there, not
+`ai/AI_NOTES.md` + `ai/prompt_log_01..14` (session history lives there, not
 here). The frozen Part A facts and the per-paragraph writing plan that seeded the
 report are folded into this file's Locked decisions and the finished
 `report.docx`.
 
 ---
 
-## Where this stands (updated 2026-08-08, hand-in day)
+## Where this stands (hand-in day)
 
-The build, every artifact in `results/`, and the full six-section report prose
-in `report.docx` are done and verified. **Phase 10 is nearly complete**: the
-project is its own public repo and the app is live (URLs below); both URLs are
-pasted into `report.docx` (Section 5 + Figure 9 caption) and `README.md`. A
-whole-document audit on 2026-08-08 verified every one of the 14 report tables
-cell-by-cell against `results/`, every quantitative prose claim against the
-CSVs (including NVDA 30-held/22-capped/0-for-CVaR, holdings ranges 13-16 /
-13-21 / 12-18 / 53-60 at the 0.5% threshold, 5 names at cap on 2023-12-05, the
-four dropped lexicon terms, and the 19 OMML equations), and fixed two
-mechanical typos ("falls"→"fall", "separate"→"separates").
+Complete and verified end to end. The build, every artifact in `results/`, and
+the six-section report prose in `report.docx` are done. The project is its own
+public repo with the app live (URLs below); both URLs are in `report.docx`
+(Section 5 + Figure 9 caption) and `README.md`. A whole-document audit verified
+every one of the 14 report tables cell-by-cell against `results/` and every
+quantitative prose claim against the CSVs (NVDA 30-held/22-capped/0-for-CVaR;
+holdings ranges 13-16 / 13-21 / 12-18 / 53-60 at the 0.5% threshold; 5 names at
+cap on 2023-12-05; the four dropped lexicon terms; 19 OMML equations).
 
-**REMAINING before Moodle (in order):**
-1. ~~Figure 9 screenshot~~ — **kept as-is, my decision.** The embedded image is
-   the *Compare funds* tab rather than the *Fact sheet* tab the caption
-   describes (flagged during the audit, confirmed unchanged after I said I'd
-   fixed it). I reviewed it and chose to leave it: it is still a genuine
-   screenshot of the deployed app proving the deployment claim, and the panel
-   it shows (the fund comparison table) is not a wrong fact, just not the
-   specific tab the caption names. Not revisiting this.
-2. In Word: F9 to populate all SEQ caption numbers, update the TOC, then
-   export `report/report.pdf`. **Done** — verified sequential Figures 1-9 /
-   Tables 1-14 in the exported PDF text.
-3. Delete the stray `Screenshot*.png` files and `__pycache__`/`.ruff_cache`
-   from the folder, re-run `scripts/check_handin.py` (expect no `[FAIL]`),
-   commit + push the final `report.docx`/`report.pdf`, zip `z5594806_projectB`,
-   submit on Moodle with the two links.
+Figure 9 (Appendix B) is the *Fact sheet* tab of the live app for the
+recommended Combined Min-CVaR fund, matching its caption. `report.pdf` was
+field-updated (F9), TOC-refreshed, and re-exported from Word; the exported PDF
+shows sequential Figures 1-9 / Tables 1-14 with no leftover markers.
+`scripts/check_handin.py` passes (24 checks); no stray `Screenshot*.png`,
+`__pycache__`, or `.ruff_cache` in the folder. Remaining: commit + push the
+final `report.docx`/`report.pdf`, zip `z5594806_projectB`, submit on Moodle
+with the two links.
 
 ### Running the app
 
@@ -55,7 +46,7 @@ one.
 - **Local:** run the command above and use the URL it prints. A port is not a
   deployment: nothing listens after the process exits, and the address means
   nothing on another computer.
-- **Live URL (DEPLOYED 2026-08-08):**
+- **Live URL:**
   https://projectb-quokka-funds-ihndbhpfsgr2aqfwey6ees.streamlit.app
 - **Public repo:** https://github.com/lucassun-unsw/projectb-quokka-funds
   (branch `main`, `streamlit_app.py` at root). Both links are already pasted
@@ -317,7 +308,7 @@ appendix, retired the duplicate per-fund fact-sheet table (body Table 1 now carr
 all six required elements for all twelve funds), condensed `current_holdings.csv`
 from 236 printed rows to 12, and stopped printing three one-to-eight-row tables
 (`vol_clustering_acf`, `sentiment_neutrality`, `lexicon_before_after`) that are
-quoted in prose instead. **Final numbering (corrected 2026-08-08 — the earlier
+quoted in prose instead. **Final numbering (the earlier
 "co-crash = Figure 6 / cost sensitivity = Figure A2" note was stale):** the
 finished document uses one continuous SEQ sequence, Figures 1–9 and Tables
 1–14, appendix exhibits included. Body = 6 figures (1 Sharpe bar, 2 growth,
@@ -380,9 +371,9 @@ P2 200→130, P3 130→120, P4–P6 220→210), not by extending the section.
 | Funds & OOS backtest | 15% | Built + verified: 12 display-named funds, no-look-ahead machine-checked, calendars verified, all required exhibits rendered and eyeballed, current-holdings artifact present. Fact-sheet presentation lands in the app + report |
 | Sentiment & fusion | 10% | Built + verified: validated index (3/3 events + control), lag-exact fusion, honest negligible-net verdict. Critical-assessment prose written (Phase 9 done) |
 | Innovation | 30% | All four strands **built and demonstrated** with saved artifacts (the rubric bar: "any one suffices"; explained negative results credited). Interpretive depth written (Phase 9 done) |
-| App | 15% | Built and **visually audited tab by tab** (Phase 8c): a 100× display-scale defect plus ten further findings, checked at 390/768/1280px as well as full width, `tests/test_app.py` added (11 tests) to cover the render layer, Ruff clean, tab bodies fragmented (8 → 5 figure renders per fund switch). **Phase 11** restyled it onto one documented token system (see the Presentation row — describe it, do not attribute it; claim the app's own encoding system, which is code-provable) and re-screenshotted all five tabs at 1600/430px; the rubric's top band names "polished, coherent design and user experience — including an original design system" explicitly, so this is scored here as well as under Innovation. **Deployment (public repo + live URL) outstanding — Phase 10** |
+| App | 15% | Built and **visually audited tab by tab** (Phase 8c): a 100× display-scale defect plus ten further findings, checked at 390/768/1280px as well as full width, `tests/test_app.py` added (11 tests) to cover the render layer, Ruff clean, tab bodies fragmented (8 → 5 figure renders per fund switch). **Phase 11** restyled it onto one documented token system (see the Presentation row — describe it, do not attribute it; claim the app's own encoding system, which is code-provable) and re-screenshotted all five tabs at 1600/430px; the rubric's top band names "polished, coherent design and user experience — including an original design system" explicitly, so this is scored here as well as under Innovation. **Deployed: public repo + live URL (Phase 10)** |
 | Interpretation & reflection | 10% | Material strong (real negative results, quantified limitations). **Written (Phase 9 done)** |
-| AI workflow | 20% | Best-covered: own agent files, **13** prompt logs, ~30 recorded corrections in `AI_NOTES.md`. Keep one log per non-trivial task |
+| AI workflow | 20% | Best-covered: own agent files, **14** prompt logs, ~30 recorded corrections in `AI_NOTES.md`. Keep one log per non-trivial task |
 
 ---
 
@@ -426,12 +417,11 @@ now, and the re-audit re-proved the same property, with only the
 artifacts it deliberately changed moving).
 
 Supporting files, none of which feed a number: `ruff.toml` (lint settings +
-the two documented frozen-file exemptions) and the test suite — **29 tests**
-(count updated 2026-08-08): `tests/test_app.py` (14, display-layer, including
-the management-fee tests), `tests/test_portfolios.py` (13, the risk
-estimate, the no-look-ahead scramble, and the calendar / lag / cap rules added
-after mutation testing showed three of them had no test that could
-fail), `tests/test_smoke.py` (2). All 29 pass as of the 2026-08-08 audit;
+the two documented frozen-file exemptions) and the test suite — **29 tests**:
+`tests/test_app.py` (14, display-layer, including the management-fee tests),
+`tests/test_portfolios.py` (13, the risk estimate, the no-look-ahead scramble,
+and the calendar / lag / cap rules added after mutation testing showed three of
+them had no test that could fail), `tests/test_smoke.py` (2). All 29 pass;
 `ruff check .` clean with no flags.
 
 ---
@@ -497,9 +487,10 @@ report's economic reasoning; only this project's own `z5594806_projectA`/
       URLs pasted into `report.docx` + `README.md`; whole-document audit run
       (all 14 tables and all prose numbers verified against `results/`; two
       typos fixed)
-- [ ] Phase 10b — hand in: F9-updated fields + TOC, `report/report.pdf`
-      exported and verified (sequential Figures 1-9 / Tables 1-14). Figure 9
-      knowingly kept as the Compare-funds screenshot rather than Fact sheet —
-      my decision, not an oversight. Remaining: delete `Screenshot*.png` +
-      `__pycache__` + `.ruff_cache`, re-run `check_handin.py`, commit + push
+- [x] Phase 10b — hand in: fields + TOC updated (F9), `report/report.pdf`
+      re-exported and verified (sequential Figures 1-9 / Tables 1-14, no
+      leftover markers). Figure 9 replaced with the *Fact sheet* tab of the
+      live app, its caption rewritten to match. `check_handin.py` passes (24);
+      folder clean (no `Screenshot*.png` / `__pycache__` / `.ruff_cache`).
+      Remaining: commit + push the final `report.docx`/`report.pdf`, zip, submit
       final report, zip `z5594806_projectB`, submit on Moodle with both links

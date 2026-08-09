@@ -6,7 +6,7 @@ Transparency criterion.
 - `AI_NOTES.md` — the running account, in my own words: how I direct and check
   the assistant, and a log of what it got wrong and how I caught it, with
   pointers into the per-task logs.
-- `prompt_log_01` … `prompt_log_13` — one per task: what I wanted, what I
+- `prompt_log_01` … `prompt_log_14` — one per task: what I wanted, what I
   directed, what the assistant produced, what was wrong or risky, and what I
   changed and why.
 
